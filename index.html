@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Password Protection Modal -->
+    <div id="password-modal" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;z-index:3000;display:flex;align-items:center;justify-content:center;">
+        <div class="modal-content" style="max-width:340px;text-align:center;box-shadow:0 2px 16px #222;">
+            <h2 style="color:#2ecc40;margin-bottom:18px;">Protected Memory Book</h2>
+            <input type="password" id="site-password" placeholder="Enter password" style="width:80%;padding:10px 12px;margin-bottom:16px;border-radius:8px;border:1px solid #2ecc40;font-size:1.1rem;">
+            <button id="password-submit" style="background:#2ecc40;color:#222;border:2px solid #ffd700;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:1.1rem;">Enter</button>
+            <div id="password-error" style="color:red;margin-top:12px;font-size:1rem;"></div>
+        </div>
+    </div>
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section">
+        <div class="hero-content">
+            <img src="assets/images/hero.jpg" alt="Hero Image" class="hero-image">
+            <h1 class="hero-title">For SIA</h1>
+            <h1 class="hero-title">I am sorry</h1>
+        </div>
+    </section>
+    <!-- Section 5: Image Gallery -->
+    <!-- ...existing code... -->
+    <!-- Section 2: Timeline of Memories -->
+    <section id="timeline" class="section parallax-bg">
+        <div class="timeline-content">
+            <div class="timeline-item left">
+                <img src="assets/images/video_call.jpg" alt="Video Call" class="timeline-img">
+                <div class="timeline-caption">Our first video call—nervous, excited, and so happy to see your face.</div>
+            </div>
+            <div class="timeline-item right">
+                <img src="assets/images/texts.jpg" alt="Texts" class="timeline-img">
+                <div class="timeline-caption">Late-night texts that made the distance feel smaller, sharing dreams and secrets.</div>
+            </div>
+            <div class="timeline-item left">
+                <img src="assets/images/snaps.jpg" alt="Snaps" class="timeline-img">
+                <div class="timeline-caption">Your silly snaps and selfies—my daily dose of happiness.</div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 3: Apology -->
+    <section id="apology" class="section">
+        <div class="apology-content fancy-apology">
+            <div class="apology-frame">
+                <div class="apology-heart">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="heart-shape" d="M24 42s-14-8.35-14-18.5S15.5 7 24 16.5 38 7 38 23.5 24 42 24 42z" fill="#ffd700" stroke="#2ecc40" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="apology-text">
+                    <p class="apology-line">I’m <span class="apology-word">sorry</span> <span class="apology-word">for</span> <span class="apology-word">letting</span> <span class="apology-word">the</span> <span class="apology-word">distance</span> <span class="apology-word">get</span> <span class="apology-word">between</span> <span class="apology-word">us.</span></p>
+                    <p class="apology-line">I <span class="apology-word">wish</span> <span class="apology-word">I</span> <span class="apology-word">had</span> <span class="apology-word">found</span> <span class="apology-word">better</span> <span class="apology-word">ways</span> <span class="apology-word">to</span> <span class="apology-word">make</span> <span class="apology-word">you</span> <span class="apology-word">feel</span> <span class="apology-word">close,</span> <span class="apology-word">even</span> <span class="apology-word">when</span> <span class="apology-word">miles</span> <span class="apology-word">apart.</span></p>
+                    <p class="apology-line">You <span class="apology-word">are</span> <span class="apology-word">my</span> <span class="apology-word">person,</span> <span class="apology-word">no</span> <span class="apology-word">matter</span> <span class="apology-word">how</span> <span class="apology-word">far,</span> <span class="apology-word">and</span> <span class="apology-word">I</span> <span class="apology-word">hope</span> <span class="apology-word">you</span> <span class="apology-word">can</span> <span class="apology-word">forgive</span> <span class="apology-word">me.</span></p>
+                </div>
+                <div class="apology-quote">“Distance means so little when someone means so much.”</div>
+            </div>
+        </div>
+    </section>
+    <!-- Section 4: Hope for the Future -->
+    <section id="future" class="section">
+        <div class="future-content">
+            <h2 class="future-title">A Hope for Us</h2>
+            <p class="future-message">Even if we can’t meet, I want to keep sharing calls, texts, and snaps with you.</p>
+            <button id="send-message-btn" style="margin-top:24px;background:linear-gradient(90deg, #2ecc40 80%, #ffd700 20%);color:#222;border:2px solid #ffd700;padding:14px 32px;border-radius:8px;cursor:pointer;font-size:1.1rem;box-shadow:0 2px 8px rgba(44,204,64,0.12);animation:pulseBtn 2s infinite;transition:background 0.3s, color 0.3s;">Send a Message</button>
+            <!-- Auto-scrolling image carousel for emotions -->
+            <div class="carousel-wrapper" style="margin-top:32px;">
+                <div class="carousel-track">
+                    <img src="assets/images/emotion1.jpg" alt="Memory 1" class="carousel-img">
+                    <img src="assets/images/emotion2.jpg" alt="Memory 2" class="carousel-img">
+                    <img src="assets/images/emotion3.jpg" alt="Memory 3" class="carousel-img">
+                    <img src="assets/images/emotion4.jpg" alt="Memory 4" class="carousel-img">
+                    <img src="assets/images/emotion5.jpg" alt="Memory 5" class="carousel-img">
+                    <img src="assets/images/emotion6.png" alt="Memory 6" class="carousel-img">
+                </div>
+            </div>
+            <!-- Modal for viewing carousel images -->
+            <div id="carousel-modal" class="modal">
+                <div class="modal-content" style="max-width:600px;padding:0;display:flex;flex-direction:column;align-items:center;">
+                    <span class="close" id="close-carousel-modal" style="align-self:flex-end;font-size:2rem;cursor:pointer;margin:8px 16px 0 0;">&times;</span>
+                    <img id="carousel-modal-img" src="" alt="Large view" style="max-width:95%;max-height:80vh;border-radius:18px;box-shadow:0 2px 16px rgba(44,204,64,0.18);margin-bottom:12px;">
+                    <div id="carousel-modal-caption" style="color:#222;font-size:1.1rem;margin-bottom:18px;text-align:center;"></div>
+                </div>
+            </div>
+            <!-- Down Arrow Indicator for Gallery -->
+            <div class="gallery-arrow" style="display:flex;justify-content:center;margin:32px 0 0 0;">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 36L12 24H20V12H28V24H36L24 36Z" fill="#2ecc40" stroke="#ffd700" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <!-- Interactive Apology Modal -->
+    <div id="apology-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-apology">&times;</span>
+            <h3 style="color:#000;">A Personal Note</h3>
+            <p style="margin-top:18px;">I know a video can't say it all, but I want you to know how much you mean to me. <br>Would you like to send me a message back?</p>
+            <form id="formspree-form" action="https://formspree.io/f/mkgvqdyb" method="POST">
+                <textarea name="message" id="reply-message" rows="4" style="width:100%;margin-top:12px;border-radius:8px;border:1px solid #2ecc40;padding:8px;"></textarea>
+                <button type="submit" id="send-reply" style="margin-top:12px;background:linear-gradient(90deg, #2ecc40 80%, #ffd700 20%);color:#222;border:2px solid #ffd700;padding:10px 24px;border-radius:8px;cursor:pointer;">Send</button>
+                <div id="reply-status" style="margin-top:10px;color:#222;"></div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // Simple password protection
+    document.body.style.overflow = 'hidden';
+    document.body.style.background = '#000';
+    Array.from(document.body.children).forEach(function(child) {
+        if (child.id !== 'password-modal') child.style.display = 'none';
+    });
+    const passwordModal = document.getElementById('password-modal');
+    const passwordInput = document.getElementById('site-password');
+    const passwordSubmit = document.getElementById('password-submit');
+    const passwordError = document.getElementById('password-error');
+    const CORRECT_PASSWORD = 'sia'; // Change this to your desired password
+    function unlockSite() {
+        passwordModal.style.display = 'none';
+        document.body.style.overflow = '';
+        document.body.style.background = '';
+        Array.from(document.body.children).forEach(function(child) {
+            if (child.id !== 'password-modal') child.style.display = '';
+        });
+    }
+    passwordSubmit.onclick = function() {
+        if (passwordInput.value === CORRECT_PASSWORD) {
+            unlockSite();
+        } else {
+            passwordError.textContent = 'Incorrect password. Please try again.';
+            passwordInput.value = '';
+        }
+    };
+    passwordInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') passwordSubmit.onclick();
+    });
+    </script>
+</body>
+<!-- Section 5: Image Gallery (moved to end) -->
+<section id="gallery" class="section">
+    <div class="gallery-content">
+        <h2 class="gallery-title">Image Gallery</h2>
+        <div class="gallery-grid">
+            <img src="assets/images/emotion1.jpg" alt="Memory 1" class="gallery-img">
+            <img src="assets/images/emotion2.jpg" alt="Memory 2" class="gallery-img">
+            <img src="assets/images/emotion3.jpg" alt="Memory 3" class="gallery-img">
+            <img src="assets/images/emotion4.jpg" alt="Memory 4" class="gallery-img">
+            <img src="assets/images/emotion5.jpg" alt="Memory 5" class="gallery-img">
+            <img src="assets/images/emotion6.png" alt="Memory 6" class="gallery-img">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+</section>
+</body>
+</html>
