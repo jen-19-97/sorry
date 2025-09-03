@@ -15,84 +15,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     attachGalleryImageListeners();
     // Carousel image modal logic
-    const carouselTrack = document.querySelector('.carousel-track');
     const carouselModal = document.getElementById('carousel-modal');
     const carouselModalImg = document.getElementById('carousel-modal-img');
     const carouselModalCaption = document.getElementById('carousel-modal-caption');
     const closeCarouselModal = document.getElementById('close-carousel-modal');
+    // Carousel manual scroll with left/right buttons
+    const carouselTrack = document.querySelector('.carousel-track');
+    let carouselIndex = 0;
+    function updateCarouselPosition() {
+        const imgs = carouselTrack.querySelectorAll('.carousel-img');
+        const imgWidth = imgs[0].offsetWidth + 32; // 32px gap from CSS
+        carouselTrack.style.transform = `translateX(${-carouselIndex * imgWidth}px)`;
+        // Disable left button if at start, right button if at end
+        leftBtn.disabled = carouselIndex === 0;
+        rightBtn.disabled = carouselIndex === imgs.length - 1;
+    }
     function attachCarouselImageListeners() {
         const allImgs = document.querySelectorAll('.carousel-img');
         allImgs.forEach(img => {
             img.onclick = null;
             img.addEventListener('click', function() {
-                console.log('Image clicked:', img.src);
                 carouselModal.style.display = 'block';
                 carouselModalImg.src = img.src;
                 carouselModalCaption.textContent = img.alt;
-                // Pause JS carousel when modal opens
-                jsCarouselPaused = true;
             });
         });
     }
+    // Add left/right button listeners
+    const leftBtn = document.getElementById('carousel-left-btn');
+    const rightBtn = document.getElementById('carousel-right-btn');
+    leftBtn.addEventListener('click', function() {
+        const imgs = carouselTrack.querySelectorAll('.carousel-img');
+        if (carouselIndex > 0) {
+            carouselIndex--;
+            updateCarouselPosition();
+        }
+    });
+    rightBtn.addEventListener('click', function() {
+        const imgs = carouselTrack.querySelectorAll('.carousel-img');
+        if (carouselIndex < imgs.length - 1) {
+            carouselIndex++;
+            updateCarouselPosition();
+        }
+    });
+    // Initial setup
+    attachCarouselImageListeners();
+    updateCarouselPosition();
+
     closeCarouselModal.addEventListener('click', function() {
         carouselModal.style.display = 'none';
         carouselModalImg.src = '';
         carouselModalCaption.textContent = '';
-        // Resume JS carousel when modal closes
-        jsCarouselPaused = false;
     });
     window.addEventListener('click', function(event) {
         if (event.target === carouselModal) {
             carouselModal.style.display = 'none';
             carouselModalImg.src = '';
             carouselModalCaption.textContent = '';
-            // Resume JS carousel when modal closes
-            jsCarouselPaused = false;
         }
     });
-    // JS-driven auto-scrolling carousel
-    let jsCarouselPaused = false;
-    let jsCarouselX = 0;
-    let jsCarouselSpeed = 0.5; // px per frame
-    let jsCarouselWidth = 0;
-    let jsCarouselFrame;
-
-    function updateCarouselWidth() {
-        jsCarouselWidth = carouselTrack.scrollWidth / 2;
-    }
-
-    function jsCarouselLoop() {
-        if (!jsCarouselPaused) {
-            jsCarouselX -= jsCarouselSpeed;
-            if (Math.abs(jsCarouselX) >= jsCarouselWidth) {
-                jsCarouselX = 0;
-            }
-            carouselTrack.style.transform = `translateX(${jsCarouselX}px)`;
-        }
-        jsCarouselFrame = requestAnimationFrame(jsCarouselLoop);
-    }
-
-    if (carouselTrack) {
-        // Clone images for seamless infinite scroll
-        const imgs = carouselTrack.querySelectorAll('.carousel-img');
-        imgs.forEach(img => {
-            const clone = img.cloneNode(true);
-            carouselTrack.appendChild(clone);
-        });
-        updateCarouselWidth();
-        attachCarouselImageListeners();
-
-        // Observe DOM changes to re-attach listeners to clones and update width
-        const observer = new MutationObserver(() => {
-            attachCarouselImageListeners();
-            updateCarouselWidth();
-        });
-        observer.observe(carouselTrack, { childList: true, subtree: true });
-
-        jsCarouselLoop();
-    }
-
-    // ...existing code...
     // Word-by-word apology animation
     function animateApologyWords() {
         const apologySection = document.getElementById('apology');
@@ -214,3 +195,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// End of file
