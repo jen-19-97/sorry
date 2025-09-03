@@ -79,12 +79,12 @@
                         <path class="heart-shape" d="M24 42s-14-8.35-14-18.5S15.5 7 24 16.5 38 7 38 23.5 24 42 24 42z" fill="#ffd700" stroke="#2ecc40" stroke-width="2"/>
                     </svg>
                 </div>
-                <div class="apology-text">
+                <div class="apology-text apology-text-animate">
                     <p class="apology-line">I’m <span class="apology-word">sorry</span> <span class="apology-word">for</span> <span class="apology-word">letting</span> <span class="apology-word">the</span> <span class="apology-word">distance</span> <span class="apology-word">get</span> <span class="apology-word">between</span> <span class="apology-word">us.</span></p>
                     <p class="apology-line">I <span class="apology-word">wish</span> <span class="apology-word">I</span> <span class="apology-word">had</span> <span class="apology-word">found</span> <span class="apology-word">better</span> <span class="apology-word">ways</span> <span class="apology-word">to</span> <span class="apology-word">make</span> <span class="apology-word">you</span> <span class="apology-word">feel</span> <span class="apology-word">close,</span> <span class="apology-word">even</span> <span class="apology-word">when</span> <span class="apology-word">miles</span> <span class="apology-word">apart.</span></p>
                     <p class="apology-line">You <span class="apology-word">are</span> <span class="apology-word">my</span> <span class="apology-word">person,</span> <span class="apology-word">no</span> <span class="apology-word">matter</span> <span class="apology-word">how</span> <span class="apology-word">far,</span> <span class="apology-word">and</span> <span class="apology-word">I</span> <span class="apology-word">hope</span> <span class="apology-word">you</span> <span class="apology-word">can</span> <span class="apology-word">forgive</span> <span class="apology-word">me.</span></p>
                 </div>
-                <div class="apology-quote">“Distance means so little when someone means so much.”</div>
+                <div class="apology-quote apology-text-animate">“Distance means so little when someone means so much.”</div>
             </div>
         </div>
     </section>
@@ -101,7 +101,7 @@
         <div class="future-content">
             <h2 class="future-title">A Hope for Us</h2>
             <p class="future-message">Even if we can’t meet, I want to keep sharing calls, texts, and snaps with you.</p>
-            <button id="send-message-btn" style="margin-top:24px;background:linear-gradient(90deg, #2ecc40 80%, #ffd700 20%);color:#222;border:2px solid #ffd700;padding:14px 32px;border-radius:8px;cursor:pointer;font-size:1.1rem;box-shadow:0 2px 8px rgba(44,204,64,0.12);animation:pulseBtn 2s infinite;transition:background 0.3s, color 0.3s;">Send a Message</button>
+            <button id="send-message-btn" type="button" style="margin-top:24px;background:linear-gradient(90deg, #2ecc40 80%, #ffd700 20%);color:#222;border:2px solid #ffd700;padding:14px 32px;border-radius:8px;cursor:pointer;font-size:1.1rem;box-shadow:0 2px 8px rgba(44,204,64,0.12);animation:pulseBtn 2s infinite;transition:background 0.3s, color 0.3s;">Send a Message</button>
             <!-- Auto-scrolling image carousel for emotions -->
             <!--
             <div class="carousel-wrapper" style="margin-top:32px; position:relative;">
@@ -203,7 +203,27 @@
             <img src="assets/images/emotion6.png" alt="I Feel Bad" class="gallery-img">
             <!-- Add more images as needed -->
         </div>
+        <div class="gallery-arrow" style="display:flex;justify-content:center;margin:32px 0 0 0;">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 36L12 24H20V12H28V24H36L24 36Z" fill="#2ecc40" stroke="#ffd700" stroke-width="2"/>
+                </svg>
+            </div>
     </div>
 </section>
-</body>
+<!-- Section 6: Big Apology (newly added) -->
+<section id="big-sorry" class="section">
+    <div class="sorry-bg">
+        <span class="sorry-text sorry-left">sorry</span>
+        <span class="sorry-text sorry-right">sorry</span>
+        <span class="sorry-text sorry-top">sorry</span>
+        <span class="sorry-text sorry-bottom">sorry</span>
+        <span class="sorry-text sorry-diag1">sorry</span>
+        <span class="sorry-text sorry-diag2">sorry</span>
+    </div>
+    <div class="big-sorry-content apology-text-animate" style="max-width:700px;margin:0 auto;padding:40px 24px;background:rgba(255,255,255,0.95);border-radius:18px;box-shadow:0 2px 24px rgba(44,204,64,0.10);font-size:1.25rem;line-height:2;color:#222;text-align:center;">
+        <p>
+            I am truly, deeply sorry for every moment the distance made you feel alone, for every time my words or actions failed to comfort you, and for every day I didn’t do enough to remind you how much you mean to me. I wish I could take back the times I let my own worries get in the way of our happiness, and I regret not finding better ways to bridge the miles between us. You are the light in my life, the person who makes every day worth living, and I never want you to doubt your place in my heart. Please forgive me for my shortcomings, for the times I was distracted or distant, and for not always being the partner you deserve. I promise to keep trying, to keep loving you fiercely, and to never let the distance win. You are my everything, and I am so, so sorry.
+        </p>
+    </div>
+</section>
 </html>
